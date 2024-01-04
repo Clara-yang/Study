@@ -1,0 +1,25 @@
+﻿<Window x:Class="VirualStick.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpfCustomControls="clr-namespace:VirualStick.View" 
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="20">
+                <TextBlock Name="leftHorizational"/>
+                <TextBlock Name="leftVertical"/>
+                <wpfCustomControls:OnScreenJoystickLeft x:Name="onScreenJoystickLeft"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="20">
+                <TextBlock Name="rightHorizational"/>
+                <TextBlock Name="rightVertical"/>
+                <wpfCustomControls:OnScreenJoystickRight x:Name="onScreenJoystickRight"/>
+            </StackPanel>
+        </Grid>
+</Window>

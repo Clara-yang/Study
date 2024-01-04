@@ -1,0 +1,79 @@
+﻿<Window x:Class="Plot.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d3="clr-namespace:InteractiveDataDisplay.WPF;assembly=InteractiveDataDisplay.WPF"
+        Loaded="Window_Loaded" 
+        xmlns:local="clr-namespace:Plot"
+        mc:Ignorable="d"
+        Title="Window2" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <d3:Figure x:Name="OrigionPlotter" Grid.Column="1" Grid.Row="0" Margin="10"
+                  Background="#666666">
+            <Border BorderThickness="0,0,1,0" BorderBrush="Red" HorizontalAlignment="Center">
+                <d3:PlotAxis AxisOrientation="Left" d3:Figure.Placement="Center" Foreground="LightGray"/>
+            </Border>
+            <Border BorderThickness="0,1,0,0" BorderBrush="Red" VerticalAlignment="Center">
+                <d3:PlotAxis AxisOrientation="Bottom" d3:Figure.Placement="Center" Foreground="LightGray"/>
+            </Border>
+            <d3:CircleMarkerGraph x:Name="barChart" Color="LightGray" Size="6" Stroke="LightGray"/> 
+        </d3:Figure>
+        <d3:Figure x:Name="leftPlotter" Grid.Column="0" Grid.Row="0"  Margin="10" 
+                 PlotOriginX="0"
+                  PlotOriginY="0" 
+                  Background="#666666">
+            <d3:PlotAxis AxisOrientation="Right" d3:Figure.Placement="Right" Foreground="LightGray"/>
+            <Border BorderThickness="0,1,0,0" BorderBrush="Red" VerticalAlignment="Center">
+                <d3:PlotAxis AxisOrientation="Bottom" d3:Figure.Placement="Center" Foreground="LightGray" FlowDirection="RightToLeft"/>
+            </Border>
+            <Border BorderThickness="0,0,1,0" BorderBrush="Red" HorizontalAlignment="Right"/>
+            <d3:CircleMarkerGraph x:Name="circles" Color="LightGray" Size="6" Stroke="LightGray"/>
+        </d3:Figure>
+        <!--<d3:Chart x:Name="Plotter1" Grid.Column="1" Grid.Row="1" Margin="10"
+                  IsHorizontalNavigationEnabled="False"
+                  IsVerticalNavigationEnabled="False"
+                  LegendVisibility="Hidden" 
+                  BorderThickness="1,0,0,1"
+                  FlowDirection="LeftToRight"
+                  Foreground="LightGray"
+                  LeftTitle="高度/m"
+                  BottomTitle="时间/min">
+            <d3:CircleMarkerGraph x:Name="circles1" Color="LightGray" Size="5" ColorDescription="LightGray" />
+        </d3:Chart>-->
+        <d3:Figure x:Name="Plotter1" Grid.Column="1" Grid.Row="1" Margin="10"
+                  PlotOriginX="0"
+                  PlotOriginY="0"  
+                  Background="#666666">
+            <Border BorderThickness="0,0,1,0" BorderBrush="Red" HorizontalAlignment="Center" >
+                <d3:PlotAxis AxisOrientation="Left" d3:Figure.Placement="Left" Foreground="LightGray"/>
+            </Border>
+            <d3:PlotAxis AxisOrientation="Bottom" d3:Figure.Placement="Bottom" Foreground="LightGray"/>
+            <Border BorderThickness="0,0,0,1" BorderBrush="Red" VerticalAlignment="Bottom" />
+            <d3:CircleMarkerGraph x:Name="circles1" Color="LightGray" Size="6" Stroke="LightGray"/>
+        </d3:Figure>
+        <d3:Chart x:Name="Plotter2" Grid.Column="0" Grid.Row="1" Margin="10" 
+                  Background="#666666"
+                  Foreground="LightGray"
+                  LegendVisibility="Hidden" 
+                  FlowDirection="LeftToRight"
+                  LeftTitle="高度/m"
+                  BottomTitle="时间/min"
+                  IsHorizontalNavigationEnabled="False"
+                  IsVerticalNavigationEnabled="False">
+            <d3:CircleMarkerGraph x:Name="circles2" Size="6" Color="LightGray" ColorDescription="LightGray" Stroke="LightGray"/>
+            <!--<d3:PlotAxis AxisOrientation="Left"  d3:Figure.Placement="Left" Foreground="LightGray" />
+            <d3:PlotAxis AxisOrientation="Bottom" d3:Figure.Placement="Bottom" Foreground="LightGray"/>
+            <Border BorderThickness="1,0,0,1" BorderBrush="LightGray" />
+            <d3:CircleMarkerGraph x:Name="circles2" Color="LightGray" Size="6"/>-->
+        </d3:Chart>
+    </Grid>
+</Window>

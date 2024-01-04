@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="VirualStick.View.OnScreenJoystickRight"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VirualStick.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Viewbox Name="Viewbox" Stretch="Uniform">
+        <Grid Background="Transparent">
+            <Canvas x:Name="BaseRight" Margin="5" Width="340" Height="340">
+                <Ellipse HorizontalAlignment="Center" Height="250" VerticalAlignment="Top" Width="250" Canvas.Left="44" Canvas.Top="56">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="LightGray" Offset="1" />
+                            <GradientStop Color="#FF3A3737" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Center" Height="40" VerticalAlignment="Top" Width="40" Canvas.Left="150" Canvas.Top="161">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF0E0E0E" Offset="1" />
+                            <GradientStop Color="#FF1D1D1D" />
+                            <GradientStop Color="#FF323030" Offset="0.453" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FF8A8A8A" HorizontalAlignment="Left" Height="18.375" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Center" Width="42.75" Canvas.Left="148.542" Canvas.Top="60.294" />
+                <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FF8A8A8A" HorizontalAlignment="Left" Height="18.375" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Center" Width="42.75" RenderTransformOrigin="0.5,0.5" Canvas.Left="148.542" Canvas.Top="283.289">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-1.556"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FF8A8A8A" HorizontalAlignment="Center" Height="18.375" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="42.75" RenderTransformOrigin="0.5,0.5" Canvas.Left="258.039" Canvas.Top="172.625">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1" ScaleX="-1" />
+                            <RotateTransform Angle="-90" />
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z"  Fill="#FF8A8A8A" HorizontalAlignment="Left" Height="18.375" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Center" Width="42.75" RenderTransformOrigin="0.5,0.5" Canvas.Left="35.877" Canvas.Top="172.625">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="90" />
+                            <ScaleTransform ScaleX="-1" />
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+
+                <Canvas  x:Name="KnobRight" VerticalAlignment="Top" HorizontalAlignment="Left" Width="0" Height="0" RenderTransformOrigin="0.5,0.5" Canvas.Left="125" Canvas.Top="125">
+                    <Ellipse x:Name="KnobBaseRight" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="24" RenderTransformOrigin="0.5,0.5" Canvas.Top="44" Canvas.Left="33">
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FF8A8A8A" />
+                                <GradientStop Color="#FF979797" Offset="1" />
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <Canvas.RenderTransform>
+                        <TranslateTransform x:Name="knobPositionRight" />
+                    </Canvas.RenderTransform>
+                    <Canvas.Resources>
+                        <Storyboard x:Key="CenterKnobRight" Name="centerKnobRight" Completed="centerKnobRight_Completed">
+                            <DoubleAnimation Storyboard.TargetName="knobPositionRight"
+                             Storyboard.TargetProperty="X" To="0" Duration="0:0:0.2">
+                                <DoubleAnimation.EasingFunction>
+                                    <BackEase EasingMode="EaseInOut" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation Storyboard.TargetName="knobPositionRight" Storyboard.TargetProperty="Y" To="0" Duration="0:0:0.2">
+                                <DoubleAnimation.EasingFunction>
+                                    <BackEase EasingMode="EaseInOut" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </Canvas.Resources>
+                </Canvas>
+            </Canvas>
+        </Grid>
+    </Viewbox>
+</UserControl>

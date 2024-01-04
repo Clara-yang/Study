@@ -1,0 +1,207 @@
+﻿<Window x:Class="WpfDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDemo"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+                Background="{DynamicResource MaterialDesignPaper}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="{StaticResource MaterialDesignDarkBackground}">
+        <Viewbox>
+            <Grid Background="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="9*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3.5*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="3.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="5,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock Text="INTRUDER POSITION" HorizontalAlignment="Left" FontWeight="Bold" Foreground="White"/>
+                                <Border Height="0.5" Background="White" VerticalAlignment="Bottom"/>
+                            </Grid>
+                            <Grid Grid.Row="1" Margin="0,20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="79*"/>
+                                    <ColumnDefinition Width="19*"/>
+                                    <ColumnDefinition Width="98*"/>
+                                    <ColumnDefinition Width="98*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <CheckBox Grid.Row="0" Grid.Column="0" Style="{StaticResource ckb}" Content="Ahead Left" Grid.ColumnSpan="2"/>
+                                <CheckBox Grid.Row="0" Grid.Column="2" Style="{StaticResource ckb}" Content="Ahead"/>
+                                <CheckBox Grid.Row="0" Grid.Column="3" Style="{StaticResource ckb}" Content="Ahead Right"/>
+                                <CheckBox Grid.Row="1" Grid.Column="0" Style="{StaticResource ckb}" Content="Aheam Left" Grid.ColumnSpan="2"/>
+                                <Grid Grid.Row="1" Grid.Column="2">
+                                    <Image Source="/Images/Airport.png"/>
+                                </Grid>
+                                <CheckBox Grid.Row="1" Grid.Column="3" Style="{StaticResource ckb}" Content="Aheam Right" IsChecked="true"/>
+                                <CheckBox Grid.Row="2" Grid.Column="0" Style="{StaticResource ckb}" Content="Behind Left" Grid.ColumnSpan="2"/>
+                                <CheckBox Grid.Row="2" Grid.Column="2" Style="{StaticResource ckb}" Content="Behind"/>
+                                <CheckBox Grid.Row="2" Grid.Column="3" Style="{StaticResource ckb}" Content="Behind Right"/>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Margin="10">
+                                        <TextBlock Text="INTRUDER TRANSPONDER EQUIPMENT" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="12"/>
+                                        <Border Height="0.5" Background="White" VerticalAlignment="Bottom"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <CheckBox Grid.Column="0" Style="{StaticResource ckb2}"/>
+                                        <TextBlock Grid.Column="0" Text="Altitude Reporting" Foreground="White" FontSize="12" Margin="45,15,0,20"/>
+                                        <CheckBox Grid.Column="1" Style="{StaticResource ckb2}" IsChecked="True"/>
+                                        <TextBlock Grid.Column="1" Text="ADS-B Reporting" Foreground="White" FontSize="12" Margin="45,15,0,20"/>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Margin="10">
+                                        <TextBlock Text="OWNSHIP CAPACITY UMITATION" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="12"/>
+                                        <Border Height="0.5" Background="White" VerticalAlignment="Bottom"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <CheckBox Style="{StaticResource ckb2}"/>
+                                        <TextBlock Text="No Bearing Data Measured" Foreground="White" FontSize="12" Margin="45,15,0,20"/>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="5,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.3*"/>
+                                <RowDefinition Height="9.7*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock Text="INTRUDER VERTICAL FLIGHT PATH" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="White" FontSize="12"/>
+                                <Border Height="0.5" Background="White" VerticalAlignment="Bottom"/>
+                            </Grid>
+                            <Grid Grid.Row="1" Margin="0,10" HorizontalAlignment="Left">
+                                <ListBox Background="Transparent"  BorderThickness="0">
+                                    <ListBoxItem >
+                                        <StackPanel Orientation="Horizontal">
+                                            <RadioButton GroupName="flightPath" Style="{StaticResource rbtn}"/>
+                                            <TextBlock TextWrapping="Wrap" Text="Descending" Foreground="White" FontSize="12" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal">
+                                            <RadioButton GroupName="flightPath" Style="{StaticResource rbtn}" IsChecked="True"/>
+                                            <TextBlock TextWrapping="Wrap" Text="Level" Foreground="White" FontSize="12" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal">
+                                            <RadioButton GroupName="flightPath" Style="{StaticResource rbtn}"/>
+                                            <TextBlock TextWrapping="Wrap" Text="Climbing" Foreground="White" FontSize="12" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                </ListBox>
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Margin="5,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.3*"/>
+                                <RowDefinition Height="9.7*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock Text="SCENARIO" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="White" FontSize="12"/>
+                                <Border Height="0.5" Background="White" VerticalAlignment="Bottom"/>
+                            </Grid>
+                            <StackPanel Grid.Row="1" Margin="0,10">
+                                <ListBox Background="Transparent"  BorderThickness="0">
+                                    <ListBoxItem Margin="5,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <RadioButton GroupName="Scenario" Style="{StaticResource rbtn}"/>
+                                            <TextBlock TextWrapping="Wrap" Text="Traffic Advisory Only(Single Threat)" Foreground="White" FontSize="12" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal" Margin="5">
+                                            <RadioButton GroupName="Scenario" Style="{StaticResource rbtn}"/>
+                                            <TextBlock TextWrapping="Wrap" Text="Resolution Advisory &#x0a;No Climb/Descend(Dual Threat)" Foreground="White" FontSize="12" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal" Margin="5">
+                                            <RadioButton GroupName="Scenario" Style="{StaticResource rbtn}"/>
+                                            <TextBlock TextWrapping="Wrap" Text="Resolution Advisory &#x0a;Climb/Descend(Single Threat)" Foreground="White" FontSize="12" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal" Margin="5">
+                                            <RadioButton GroupName="Scenario" Style="{StaticResource rbtn}" IsChecked="True"/>
+                                            <TextBlock TextWrapping="Wrap" Text="Resolution Advisory &#x0a;Requring Further Action by Crew(Dual Threat)" Foreground="White" FontSize="12" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal" Margin="5">
+                                            <RadioButton GroupName="Scenario" Style="{StaticResource rbtn}"/>
+                                            <TextBlock TextWrapping="Wrap" Text="Resolution Advisory &#x0a;Requring Further Action by Crew(Single Threat)" Foreground="White" FontSize="12" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                    <ListBoxItem>
+                                        <StackPanel Orientation="Horizontal" Margin="5">
+                                            <RadioButton GroupName="Scenario" Style="{StaticResource rbtn}"/>
+                                            <TextBlock TextWrapping="Wrap" Text="TCAS7.1 &#x0a;Reversal Resolution Advisory(Single Threat)" Foreground="White" FontSize="12" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListBoxItem>
+                                </ListBox>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+                <StackPanel Grid.Row="1" Margin="5,0">
+                    <Border Height="0.5" Background="White" VerticalAlignment="Top"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <TextBlock Background="{StaticResource PrimaryHueMidBrush}" Text="CLOSEST POINT OF APPROACH IN 00:00" FontSize="12"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Right" Margin="5" Orientation="Horizontal">
+                            <Button x:Name="Start" Margin="15,0" Style="{StaticResource MaterialDesignFlatAccentBgButton}" BorderBrush="Chocolate" BorderThickness="2" HorizontalAlignment="left" FontSize="10" Content="  Start &#xA;Scenario"/>
+                            <Button x:Name="Stop"  Margin="20,0" Style="{StaticResource MaterialDesignFlatAccentBgButton}" BorderBrush="Chocolate" BorderThickness="2" HorizontalAlignment="Right"  FontSize="10" Content="  Stop &#xA;Scenario"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Window>

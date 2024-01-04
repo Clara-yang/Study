@@ -1,0 +1,89 @@
+﻿<Window x:Class="WpfDemo.MaterialColorTestView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDemo"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.Foreground="{DynamicResource MaterDesignBody}"
+        Title="MaterialColorTestView" Height="450" Width="800" Cursor="">
+    <!--FontFamily="{materialDesign:MaterialDesignFont}"
+    TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+    -->
+    <Window.Template>
+        <ControlTemplate TargetType="Window">
+            <Border Name="RootBorder" Padding="0,30,0,0" BorderBrush="Transparent" BorderThickness="4,0,4,4">
+                <Grid Background="Black">
+                    <AdornerDecorator>
+                        <ContentPresenter/>
+                    </AdornerDecorator>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0,30,0,0" NonClientFrameEdges="Left,Bottom,Right"/>
+    </WindowChrome.WindowChrome>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="0,-30,0,0">
+            <DockPanel>
+                <TextBlock Text="自定义标题" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </DockPanel>
+        </Border>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Margin="5" Grid.Column="0" Background="red" VerticalAlignment="Stretch" CornerRadius="12"/>
+            <TextBlock Text="aaaaaaaa" Grid.Column="0" Grid.Row="1" Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+            <Border Margin="5" Grid.Column="1" Background="Yellow" VerticalAlignment="Stretch" CornerRadius="12"/>
+            <TextBlock Text="bbbbbbbb" Grid.Column="1"  Grid.Row="1" Foreground="{DynamicResource PrimaryHueLightBrush}"/>
+            <Border Margin="5" Grid.Column="2" Background="Brown" VerticalAlignment="Stretch" CornerRadius="12"/>
+            <TextBlock Text="cccccccc" Grid.Column="2"  Grid.Row="1" Foreground="{DynamicResource PrimaryHueDarkBrush}"/>
+            <Border Margin="5" Grid.Column="3" Background="Orange" VerticalAlignment="Stretch" CornerRadius="12"/>
+            <TextBlock Text="cccccccc" Grid.Column="3"  Grid.Row="1" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"/>
+
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Width="90" Content="LIGHT" Margin="10"/>
+                    <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="90" Content="MID" Margin="10"/>
+                    <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Width="90" Content="DARK" Margin="10" Cursor="Hand"/>
+                    <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="90" Content="ACCENT" Margin="10"/>
+                    <Button Style="{StaticResource MaterialDesignOutlinedDarkButton}" Width="120" Content="自定义Button"/>
+                </StackPanel>
+                <GroupBox Header="Using Accent">
+                    <StackPanel Orientation="Horizontal" >
+                        <DatePicker Width="100" Margin="10"/>
+                        <CheckBox VerticalAlignment="Center" Content="Check Me" IsChecked="True" Margin="10"/>
+                        <ToggleButton Margin="10" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="Using Dark" materialDesign:ColorZoneAssist.Mode="Dark">
+                    <StackPanel Orientation="Horizontal">
+                        <DatePicker Width="100" Margin="10"/>
+                        <CheckBox VerticalAlignment="Center" Content="Check Me" IsChecked="False" Margin="10"/>
+                        <ToggleButton IsChecked="True" Margin="10" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Workflow>
+  <Activity>
+    <ActivityId>1</ActivityId>
+    <ActivityName>start</ActivityName>
+    <BindingPageId>1</BindingPageId>
+    <BindingRoleId>1</BindingRoleId>
+    <ActivityLevel>1</ActivityLevel>
+  </Activity>
+  <Activity>
+    <ActivityId>2</ActivityId>
+    <ActivityName>pass</ActivityName>
+    <BindingPageId>2</BindingPageId>
+    <BindingRoleId>2</BindingRoleId>
+    <ActivityLevel>2</ActivityLevel>
+  </Activity>
+</Workflow>
